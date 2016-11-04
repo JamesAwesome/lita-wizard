@@ -29,6 +29,11 @@ class Lita::Wizard
       message = step[:label]
       message = "#{message} (Write done when finished)" if step[:multiline]
       send_message message
+      if step[:exit]
+        finish_wizard
+        send_message final_message
+        destroy
+      end
     else
       advance
     end

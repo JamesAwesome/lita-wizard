@@ -33,7 +33,7 @@ module Lita
       end
 
       def should_process_message?
-        !already_processed? && private_message? && user_has_pending_wizard?
+        !already_processed? && user_has_pending_wizard?
       end
 
       def already_processed?
